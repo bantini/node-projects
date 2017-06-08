@@ -1,0 +1,20 @@
+{
+  "name": "test1",
+  "version": "0.0.1",
+  "description": "Practice code to run express",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "node-practice1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "test"
+  ],
+  "author": "nilayan bhattacharya",
+  "license": "ISC"
+}
