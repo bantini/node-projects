@@ -1,13 +1,16 @@
 const insert_record = require("./insert_record.js");
 const winston = require('winston');
 const fs = require('fs');
+const LoggingWinston = require('@google-cloud/logging-winston');
 const env = process.env.NODE_ENV || 'development';
-const logDir = '/Users/nilayan/Code/node-projects/scratchpad/galn-133';
-
+//const logDir = '/Users/nilayan/Code/node-projects/scratchpad/galn-133';
+const loggingWinston = LoggingWinston();
 // Create the log directory if it does not exist
+/*
 if (!fs.existsSync(logDir)) {
 fs.mkdirSync(logDir);
 }
+*/
 const tsFormat = () => (new Date()).toLocaleTimeString();
 const logger = new (winston.Logger)({
   transports: [
@@ -17,11 +20,13 @@ const logger = new (winston.Logger)({
       colorize: true,
       level: 'info'
     }),
+	loggingWinston
+    /*
     new (winston.transports.File)({
       filename: logDir+'/results.log',
       timestamp: tsFormat,
       level: env === 'development' ? 'debug' : 'info'
-    })
+    })*/
   ]
 });
 logger.info("Initializing...");

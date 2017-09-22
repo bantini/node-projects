@@ -1,20 +1,28 @@
 {
-  "name": "test1",
-  "version": "0.0.1",
-  "description": "Practice code to run express",
-  "main": "index.js",
+  "name": "galn-133",
+  "version": "1.0.0",
+  "description": "Testing code for issue 133 of google auth",
+  "main": "driver.js",
+  "dependencies": {
+    "@google-cloud/bigquery": "^0.9.6",
+    "@google-cloud/logging-winston": "^0.5.0",
+    "async": "^2.5.0",
+    "moment": "^2.18.1",
+    "randomstring": "^1.1.5",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "node-practice1"
+    "url": "git+https://github.com/bantini/node-projects.git"
   },
-  "keywords": [
-    "node",
-    "express",
-    "test"
-  ],
-  "author": "nilayan bhattacharya",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bantini/node-projects/issues"
+  },
+  "homepage": "https://github.com/bantini/node-projects#readme"
 }

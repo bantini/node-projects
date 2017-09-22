@@ -36,7 +36,7 @@ function insert_record(set_no, logger){
   readings = create_persons();
   const bigQuery = require('@google-cloud/bigquery')(),
   bigQueryDataset = bigQuery.dataset('my_new_dataset'),
-  bigQueryTable = bigQueryDataset.table('test_person_table');
+  bigQueryTable = bigQueryDataset.table('person_table');
   async.mapLimit(
     readings,
     5,
