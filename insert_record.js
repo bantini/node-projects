@@ -1,6 +1,7 @@
 const async = require('async'),
     moment = require('moment'),
-    randomstring = require("randomstring");
+    randomstring = require("randomstring"),
+    num_conn = 10;
 function create_persons(readings){
   var first_name, last_name, age, salary,readings=[];
   for(i=0;i<1000;i++){
@@ -16,11 +17,13 @@ function create_persons(readings){
   });
     age = (i)%40+20;
     salary = 60000+(i*100);
+    time_now = new Date();
     var person = {
       first_name: first_name,
       last_name: last_name,
       age:age,
-      salary: salary
+      salary: salary,
+      date_added: time_now
     };
     readings.push(person);
   }
@@ -39,14 +42,15 @@ function insert_record(set_no, logger){
   bigQueryTable = bigQueryDataset.table('person_table');
   async.mapLimit(
     readings,
-    5,
+    num_conn,
     function(reading, cb) {
       const record = {
         // Verious fields from reading
         first_name: reading.first_name,
         last_name: reading.last_name,
         age: reading.age,
-        salary: reading.salary
+        salary: reading.salary,
+	date_added: reading.date_added
       };
 
       // Attempt to persist individual reading.
