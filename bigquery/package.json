@@ -1,0 +1,28 @@
+{
+  "name": "galn-133",
+  "version": "1.0.0",
+  "description": "Testing code for issue 133 of google auth",
+  "main": "driver.js",
+  "dependencies": {
+    "@google-cloud/bigquery": "^0.9.6",
+    "@google-cloud/logging-winston": "^0.5.0",
+    "async": "^2.5.0",
+    "moment": "^2.18.1",
+    "randomstring": "^1.1.5",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bantini/node-projects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bantini/node-projects/issues"
+  },
+  "homepage": "https://github.com/bantini/node-projects#readme"
+}
