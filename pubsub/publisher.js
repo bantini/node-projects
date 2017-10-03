@@ -1,9 +1,10 @@
-const publish_message = require('./publish_message.js');
+//const publish_message = require('./publish_message.js');
+const topic_publish = require('./topic_publish.js');
 const random_string = require('randomstring');
 const async = require('async');
-const topic_name = 'my-topic';
-const subscription_name = 'my-sub';
-const logger = require('./logger.js').logger;
+//const topic_name = 'my-topic';
+//const subscription_name = 'my-sub';
+//const logger = require('./logger.js').logger;
 var message = "Hello world";
 var message_id = 0;
 var counter = 0;
@@ -14,6 +15,7 @@ var time_out = 10000;
 const get_messages = function(){
   var handler = setInterval(function(){
     // this code will only run when time has ellapsed
+    /* For publish_message.js
     counter = counter+1;
     message = random_string.generate({
       length: 5,
@@ -25,7 +27,8 @@ const get_messages = function(){
       clearInterval(handler);
     }
     output = publish_message.publishMessage(topic_name, message);
-
+    */
+    topic_publish.topic_publisher();
   },  time_out);
   setTimeout(get_messages, 10*time_out);
 }
